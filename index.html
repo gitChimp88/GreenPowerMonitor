@@ -6,53 +6,92 @@
 	</head>
 	<body>
 		
+		<h1 class="main-heading">Manage Connection Devices</h1>
+		
 		<div class="main">
+			
 			<div class="wrapper">
-			<p class="top">Name</p>
-			<input type="text" id="name">
-			<p>Type</p>
-			<select id="type">
-			  <option>Hub</option>
-			  <option>Switch</option>
-			  <option>Modem</option>
-			  <option>Router</option>
-			  <option>Bridge</option>
-			  <option>Repeater</option>
-			</select>
-			<p>Brand</p>
-			<select id="brand">
-			  <option>Linksys</option>
-			  <option>Cisco</option>
-			  <option>Surecom</option>
-			  <option>Cnet</option> 
-			</select>
-			<p>Model</p>
-			<input type="text" id="model">
-			<p>Installation Date</p>
-			<input type="date" id="date">
-			<div class="button">
-				<button class="button" onClick="formInfo.getInfo()">Add</button>
+				<div class="label">
+					<label class="top">Name</label>
+			        <input type="text" id="name">
+				</div>
+				
+			<div class="label">
+				 <label>Type: </label>
+				   <select id="type">
+				  <option>Hub</option>
+				  <option>Switch</option>
+				  <option>Modem</option>
+				  <option>Router</option>
+				  <option>Bridge</option>
+				  <option>Repeater</option>
+				  </select>
+			</div>
+			
+				<div class="label">
+					<label>Brand</label>
+					<select id="brand">
+					  <option>Linksys</option>
+					  <option>Cisco</option>
+					  <option>Surecom</option>
+					  <option>Cnet</option> 
+					</select>
+				</div>
+			
+				<div class="label">
+					<label>Model</label>
+			        <input type="text" id="model">
+				</div>
+			
+				<div class="label">
+					<label>Installation Date</label>
+			        <input type="date" id="date">
+				</div>
+			
+			<div >
+				<button class="button" onClick="formInfo.addRow()">Add</button>
 			</div>
 			</div>
 			
+			</div>
 			
-			<div id='scorecard'>
 		 
 
+		<div class="table-wrapper">
+			<div>
+				 <h3>Devices</h3>
+				<div class="sorting">
+					 <p class="orderBy">Order By: </p>
+				<select id="sortSelector">
+					<option></option>
+					<option value="name">Name</option>
+					<option value="date">Date</option>
+			    </select>
+				</div>
+			   
 
-		<h3 class="text-center">Devices</h3>
-				<button>Sort</button>
-
-		<!-- wasnt sure how to dynamically create a table from javascript, this section could be better -->
-		  <table id="table">
+			</div>
+		   
+		 <table id="table" border="1">
 			
+			 <thead>
+				<tr class="tableHead">
+					<th>Name</th>
+					<th>Type</th>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Installation Date</th>
+					<th>Delete Item</th>
+				</tr>
+    		</thead>
 			  
-			
+			<tbody id="body">
+    		</tbody>
 			
 		  </table>
 
-			
-		</div>
+	   </div>
+		
 		
 		<script src="/script.js"></script>
 
